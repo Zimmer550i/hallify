@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hallify/pages/forgot_pass.dart';
 import 'package:hallify/pages/signup.dart';
 import 'package:hallify/utils/constants.dart';
 import 'package:hallify/widgets/button.dart';
@@ -63,9 +64,9 @@ class LoginScreen extends StatelessWidget {
               children: [
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pushReplacement(
+                    Navigator.of(context).push(
                       MaterialPageRoute(
-                        builder: (_) => const LoginScreen(),
+                        builder: (_) => const ForgotPassword(),
                       ),
                     );
                   },
