@@ -4,8 +4,8 @@ import 'package:hallify/utils/constants.dart';
 import 'package:hallify/widgets/button.dart';
 import 'package:hallify/widgets/input.dart';
 
-class ForgotPassword extends StatelessWidget {
-  const ForgotPassword({super.key});
+class Verification extends StatelessWidget {
+  const Verification({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +30,7 @@ class ForgotPassword extends StatelessWidget {
             const Row(
               children: [
                 Text(
-                  "Forgot Password",
+                  "Verification",
                   textAlign: TextAlign.left,
                   style: TextStyle(
                     fontSize: 38,
@@ -46,21 +46,48 @@ class ForgotPassword extends StatelessWidget {
                 right: 20,
               ),
               child: Text(
-                "Don’t worry! it occurs. Please enter the email address linked with your account.",
+                "Enter the verification code we just sent on your email address.",
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   color: Color(0xff676767),
                 ),
               ),
             ),
-            const Input(hintText: "Enter your mail"),
+            SizedBox(
+              height: MediaQuery.of(context).size.width * 0.17,
+              child: const Row(
+                children: [
+                  Expanded(
+                    child: Input(hintText: "3"),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Expanded(
+                    child: Input(hintText: "3"),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Expanded(
+                    child: Input(hintText: "0"),
+                  ),
+                  SizedBox(
+                    width: 20,
+                  ),
+                  Expanded(
+                    child: Input(hintText: "1"),
+                  ),
+                ],
+              ),
+            ),
             const Padding(
               padding: EdgeInsets.only(
                 top: 5,
                 bottom: 40,
               ),
               child: Button(
-                text: "Send code",
+                text: "Verify",
                 width: double.infinity,
               ),
             ),
@@ -69,15 +96,19 @@ class ForgotPassword extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Text(
-                  "Remember password?",
+                  "Didn’t receive code?",
                   style: TextStyle(color: Colors.grey),
                 ),
                 GestureDetector(
                   onTap: () {
-                    Navigator.of(context).pop();
+                    Navigator.of(context).pushReplacement(
+                      MaterialPageRoute(
+                        builder: (_) => const LoginScreen(),
+                      ),
+                    );
                   },
                   child: const Text(
-                    " Login now ",
+                    " Resend now ",
                     style: TextStyle(color: primaryColor),
                   ),
                 ),

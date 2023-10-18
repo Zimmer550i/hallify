@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hallify/pages/login.dart';
+import 'package:hallify/pages/verification.dart';
 import 'package:hallify/utils/constants.dart';
 import 'package:hallify/widgets/button.dart';
 import 'package:hallify/widgets/input.dart';
@@ -25,7 +26,7 @@ class SignupScreen extends StatelessWidget {
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 20.0),
+          padding: const EdgeInsets.symmetric(horizontal: authPadding),
           child: Column(
             children: [
               const Text(
@@ -42,11 +43,13 @@ class SignupScreen extends StatelessWidget {
               const Input(hintText: "Email"),
               const Input(hintText: "Create a new Password"),
               const Input(hintText: "Confirm Password"),
-              const Padding(
-                padding: EdgeInsets.symmetric(vertical: 20),
+              Padding(
+                padding: const EdgeInsets.symmetric(vertical: 20),
                 child: Button(
                   text: "Sign Up",
                   width: double.infinity,
+                  func: () => Navigator.of(context).push(
+                      MaterialPageRoute(builder: (_) => const Verification())),
                 ),
               ),
               const Row(
