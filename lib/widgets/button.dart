@@ -6,12 +6,16 @@ class Button extends StatelessWidget {
   final String text;
   final double width;
   final double height;
+  final double size;
+  final double textSize;
   final void Function()? func;
   const Button(
       {super.key,
       this.color = primaryColor,
       this.width = 200,
       this.height = 56,
+      this.textSize = 28,
+      this.size = 1,
       this.func,
       required this.text});
 
@@ -24,19 +28,19 @@ class Button extends StatelessWidget {
         padding: const EdgeInsets.symmetric(horizontal: 5, vertical: 5),
         backgroundColor: color,
         disabledBackgroundColor: color,
-        minimumSize: Size(width, height),
+        minimumSize: Size(width * size, height * size),
         shape: RoundedRectangleBorder(
           side: (color == Colors.white)
               ? const BorderSide(width: 1)
               : BorderSide.none,
-          borderRadius: BorderRadius.circular(10.0),
+          borderRadius: BorderRadius.circular(10.0 * size),
         ),
       ),
       child: Text(
         text,
         style: TextStyle(
           color: (color == Colors.white) ? primaryColor : Colors.white,
-          fontSize: 28,
+          fontSize: textSize * size,
           fontWeight: FontWeight.bold,
         ),
       ),

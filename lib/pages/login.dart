@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:hallify/pages/forgot_pass.dart';
+import 'package:hallify/pages/homepage.dart';
 import 'package:hallify/pages/signup.dart';
 import 'package:hallify/utils/constants.dart';
 import 'package:hallify/widgets/button.dart';
 import 'package:hallify/widgets/input.dart';
+import 'package:hallify/widgets/location_access.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -77,11 +79,60 @@ class LoginScreen extends StatelessWidget {
                 ),
               ],
             ),
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 20),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 20),
               child: Button(
                 text: "Login",
                 width: double.infinity,
+                func: () {
+                  Navigator.of(context).pushReplacement(
+                    MaterialPageRoute(
+                      builder: (_) => const HomePage(),
+                    ),
+                  );
+                  showDialog(
+                      context: context, builder: (_) => const LocationAccess());
+
+                  // showDialog(
+                  //   context: context,
+                  //   builder: (context) {
+                  //     return AlertDialog(
+                  //       icon: const Icon(Icons.check),
+                  //       iconColor: Colors.green,
+                  //       title: const Text("Location Access"),
+                  //       actionsPadding: const EdgeInsets.all(authPadding),
+                  //       actions: [
+                  //         Text("Location Access"),
+                  //         Text(
+                  //           "This blog post has been published. Team members will be able to edit this post and republish changes.",
+                  //         ),
+                  //         Row(
+                  //           children: [
+                  //             Button(
+                  //               text: "Cancel",
+                  //               size: 0.6,
+                  //               color: Colors.white,
+                  //               func: () {
+                  //                 Navigator.of(context).pop();
+                  //               },
+                  //             ),
+                  //             const SizedBox(
+                  //               width: authPadding,
+                  //             ),
+                  //             Button(
+                  //               text: "Confirm",
+                  //               size: 0.6,
+                  //               func: () {
+                  //                 Navigator.of(context).pop();
+                  //               },
+                  //             ),
+                  //           ],
+                  //         ),
+                  //       ],
+                  //     );
+                  //   },
+                  // );
+                },
               ),
             ),
             const Row(

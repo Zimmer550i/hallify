@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hallify/pages/login.dart';
 import 'package:hallify/utils/constants.dart';
 import 'package:hallify/widgets/button.dart';
 import 'package:hallify/widgets/input.dart';
