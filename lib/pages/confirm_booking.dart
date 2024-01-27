@@ -4,10 +4,16 @@ import 'package:hallify/utils/constants.dart';
 import 'package:hallify/widgets/button.dart';
 import 'package:hallify/widgets/input.dart';
 
-class ConfirmBooking extends StatelessWidget {
+class ConfirmBooking extends StatefulWidget {
   final Hotel hotel;
   const ConfirmBooking({super.key, required this.hotel});
 
+  @override
+  State<ConfirmBooking> createState() => _ConfirmBookingState();
+}
+
+class _ConfirmBookingState extends State<ConfirmBooking> {
+  DateTime? dateTime;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -38,7 +44,7 @@ class ConfirmBooking extends StatelessWidget {
               child: Stack(
                 children: [
                   Image.asset(
-                    hotel.imgList[0],
+                    widget.hotel.imgList[0],
                     width: double.infinity,
                     fit: BoxFit.cover,
                   ),
@@ -46,7 +52,7 @@ class ConfirmBooking extends StatelessWidget {
                     bottom: 0,
                     left: authPadding,
                     child: Text(
-                      hotel.name,
+                      widget.hotel.name,
                       style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.w500,
@@ -129,7 +135,7 @@ class ConfirmBooking extends StatelessWidget {
                             .copyWith(fontSize: 16),
                       ),
                       Text(
-                        "\$${hotel.price.toStringAsFixed(hotel.price.truncateToDouble() == hotel.price ? 0 : 1)}",
+                        "\$${widget.hotel.price.toStringAsFixed(widget.hotel.price.truncateToDouble() == widget.hotel.price ? 0 : 1)}",
                         style: Theme.of(context)
                             .textTheme
                             .displaySmall!
@@ -173,7 +179,7 @@ class ConfirmBooking extends StatelessWidget {
                             .copyWith(fontSize: 16),
                       ),
                       Text(
-                        "\$${hotel.price + 4}",
+                        "\$${widget.hotel.price + 4}",
                         style: Theme.of(context)
                             .textTheme
                             .displaySmall!
@@ -200,7 +206,8 @@ class ConfirmBooking extends StatelessWidget {
                   Stack(
                     children: [
                       Input(
-                        hintText: "dd/mm/yy",
+                        hintText:
+                            dateTime == null ? "dd/mm/yy" : "${dateTime!.day}-${dateTime!.month}-${dateTime!.year}",
                         inputBackgroundColor: Colors.grey.shade50,
                       ),
                       Positioned(
@@ -208,7 +215,7 @@ class ConfirmBooking extends StatelessWidget {
                         bottom: 0,
                         top: 0,
                         child: GestureDetector(
-                          onTap: () => print("Hi"),
+                          onTap: () => pickDate(),
                           child: const Row(
                             mainAxisSize: MainAxisSize.min,
                             children: [
@@ -274,5 +281,17 @@ class ConfirmBooking extends StatelessWidget {
         ),
       ),
     );
+  }
+
+  void pickDate() async {
+    dateTime = await showDatePicker(
+      context: context,
+      firstDate: DateTime(2000),
+      lastDate: DateTime(2100),
+      initialDate: DateTime.now(),
+    );
+    setState(() {
+      
+    });
   }
 }
