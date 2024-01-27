@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hallify/models/hotel.dart';
+import 'package:hallify/pages/confirm_booking.dart';
 import 'package:hallify/utils/constants.dart';
 import 'package:hallify/widgets/button.dart';
 import 'package:hallify/widgets/rating.dart';
@@ -57,6 +58,13 @@ class _HotelInfoState extends State<HotelInfo> {
               width: MediaQuery.of(context).size.width / 1.9,
             ),
             Button(
+              func: () => Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (_) => ConfirmBooking(
+                    hotel: widget.hotel,
+                  ),
+                ),
+              ),
               text: "Book",
               size: 0.8,
               width: MediaQuery.of(context).size.width / 1.9,
@@ -74,7 +82,7 @@ class _HotelInfoState extends State<HotelInfo> {
               width: double.infinity,
               fit: BoxFit.cover,
             ),
-          
+
             // Name
             Padding(
               padding: const EdgeInsets.all(authPadding),
@@ -88,7 +96,7 @@ class _HotelInfoState extends State<HotelInfo> {
                           fontSize: 28,
                         ),
                   ),
-          
+
                   // Details
                   Padding(
                     padding: EdgeInsets.symmetric(vertical: size / 50),
@@ -101,8 +109,7 @@ class _HotelInfoState extends State<HotelInfo> {
                         Row(
                           mainAxisSize: MainAxisSize.min,
                           children: [
-                            Rating(
-                                rating: widget.hotel.review, size: size / 5),
+                            Rating(rating: widget.hotel.review, size: size / 5),
                             Text(
                               "(${widget.hotel.reviewCount} reviews)",
                               style: Theme.of(context)

@@ -3,10 +3,12 @@ import 'package:flutter/material.dart';
 class Input extends StatefulWidget {
   final String hintText;
   final bool obscureText;
+  final Color inputBackgroundColor;
   const Input({
     super.key,
     required this.hintText,
     this.obscureText = false,
+    this.inputBackgroundColor = const Color(0xffF1F1F1),
   });
 
   @override
@@ -23,7 +25,7 @@ class _InputState extends State<Input> {
       child: Container(
         padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 5),
         decoration: BoxDecoration(
-          color: const Color(0xffF1F1F1),
+          color: widget.inputBackgroundColor,
           borderRadius: BorderRadius.circular(10),
           border: Border.all(color: const Color(0xffD0D5DD)),
         ),
