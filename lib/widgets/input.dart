@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 class Input extends StatefulWidget {
   final String hintText;
   final bool obscureText;
-  const Input({super.key, required this.hintText, this.obscureText = false});
+  const Input({
+    super.key,
+    required this.hintText,
+    this.obscureText = false,
+  });
 
   @override
   State<Input> createState() => _InputState();

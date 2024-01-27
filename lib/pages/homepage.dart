@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hallify/pages/filter.dart';
 import 'package:hallify/pages/hotel_info.dart';
 import 'package:hallify/utils/constants.dart';
 import 'package:hallify/widgets/input.dart';
@@ -23,7 +24,10 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             color: const Color(0xffAFACAC),
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (_) => const Filter()));
+            },
             icon: const Icon(
               Icons.filter_alt_outlined,
               color: Colors.black,
