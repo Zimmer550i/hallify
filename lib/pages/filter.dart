@@ -10,14 +10,15 @@ class Filter extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text(
+        title: Text(
           "Filters",
           textAlign: TextAlign.left,
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 38,
-            fontWeight: FontWeight.bold,
-          ),
+          style: Theme.of(context).textTheme.titleLarge!.copyWith(fontSize: 38),
+          // style: TextStyle(
+          //   color: Colors.black,
+          //   fontSize: 38,
+          //   fontWeight: FontWeight.bold,
+          // ),
         ),
         centerTitle: true,
         leading: IconButton(

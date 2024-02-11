@@ -6,8 +6,13 @@ import 'package:hallify/pages/welcome.dart';
 
 void main() async {
   runApp(
-    const MaterialApp(
-      home: WelcomeScreen(), // Your welcome screen widget goes here
+    MaterialApp(
+      theme: ThemeData(
+        textTheme: const TextTheme(
+          titleLarge: TextStyle(fontFamily: 'AirbnbCereal'),
+        ),
+      ),
+      home: const WelcomeScreen(), // Your welcome screen widget goes here
     ),
   );
 }
