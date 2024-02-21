@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hallify/pages/search_result.dart';
 import 'package:hallify/utils/constants.dart';
 import 'package:hallify/widgets/button.dart';
 import 'package:hallify/widgets/input.dart';
@@ -147,9 +148,18 @@ class Filter extends StatelessWidget {
                 ],
               ),
             ),
-            const SizedBox(height: authPadding,),
-            const Align(
-              child: Button(text: "Save"),
+            const SizedBox(
+              height: authPadding,
+            ),
+            Align(
+              child: Button(
+                text: "Save",
+                func: () => Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (_) => const Search(location: "Dhanmondi"),
+                  ),
+                ),
+              ),
             ),
           ],
         ),

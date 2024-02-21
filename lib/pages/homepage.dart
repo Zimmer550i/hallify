@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:hallify/pages/filter.dart';
 import 'package:hallify/pages/hotel_info.dart';
+import 'package:hallify/pages/search_result.dart';
 import 'package:hallify/utils/constants.dart';
 import 'package:hallify/widgets/input.dart';
 import 'package:hallify/widgets/rating.dart';
@@ -53,10 +54,10 @@ class HomePage extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const Padding(
-              padding: EdgeInsets.symmetric(
+            Padding(
+              padding: const EdgeInsets.symmetric(
                   horizontal: authPadding, vertical: authPadding * 1.5),
-              child: Input(hintText: "Search"),
+              child: Input(hintText: "Search", onSubmitedFuct: (p0) => Navigator.of(context).push(MaterialPageRoute(builder: (_)=>Search(location: p0))),),
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: authPadding),

@@ -4,11 +4,12 @@ class Input extends StatefulWidget {
   final String hintText;
   final bool obscureText;
   final Color inputBackgroundColor;
+  final Function(String)? onSubmitedFuct;
   const Input({
     super.key,
     required this.hintText,
     this.obscureText = false,
-    this.inputBackgroundColor = const Color(0xffF1F1F1),
+    this.inputBackgroundColor = const Color(0xffF1F1F1), this.onSubmitedFuct,
   });
 
   @override
@@ -31,6 +32,7 @@ class _InputState extends State<Input> {
         ),
         child: TextField(
           obscureText: widget.obscureText && _isObscure,
+          onSubmitted: widget.onSubmitedFuct,
           decoration: InputDecoration(
             hintText: widget.hintText,
             suffixIcon: widget.obscureText
