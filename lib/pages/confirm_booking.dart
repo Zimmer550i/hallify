@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hallify/models/hotel.dart';
+import 'package:hallify/pages/payment_methods.dart';
 import 'package:hallify/utils/constants.dart';
 import 'package:hallify/widgets/button.dart';
 import 'package:hallify/widgets/input.dart';
@@ -272,7 +273,7 @@ class _ConfirmBookingState extends State<ConfirmBooking> {
               text: "Next",
               height: 31,
               textSize: 24,
-              func: () => print("Hi"),
+              func: () => Navigator.of(context).push(MaterialPageRoute(builder: (_)=>const PaymentMethods())),
             ),
             const SizedBox(
               height: authPadding,

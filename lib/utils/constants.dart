@@ -8,7 +8,7 @@ const String placeHolderString =
 
 List<Hotel> hotels = [
   Hotel(
-    ["assets/hotel_moon.png"],
+    ["assets/moon.jpg"],
     "Hotel Moon",
     3.0,
     10,
@@ -16,7 +16,7 @@ List<Hotel> hotels = [
     placeHolderString,
   ),
   Hotel(
-    ["assets/hotel_del_luna.png"],
+    ["assets/del_luna.jpg"],
     "Hotel Del Luna",
     3.1,
     12,
@@ -24,27 +24,21 @@ List<Hotel> hotels = [
     placeHolderString,
   ),
   Hotel(
-    ["assets/hotel_moon.png"],
-    "Hotel Moon",
-    3.0,
-    10,
-    "Location",
+    ["assets/dhaka.png"],
+    "Dhaka Restaurant",
+    5.0,
+    1,
+    "Dhanmondi",
     placeHolderString,
+    price: 2200,
   ),
   Hotel(
-    ["assets/hotel_moon.png"],
-    "Hotel Moon",
-    3.0,
-    10,
-    "Location",
+    ["assets/uttara.png"],
+    "Uttara Restaurant",
+    5.0,
+    2,
+    "Dhanmondi",
     placeHolderString,
-  ),
-  Hotel(
-    ["assets/hotel_moon.png"],
-    "Hotel Moon",
-    3.0,
-    10,
-    "Location",
-    placeHolderString,
+    price: 2100,
   ),
 ];
