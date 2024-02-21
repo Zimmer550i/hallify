@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:hallify/utils/constants.dart';
-import 'package:hallify/widgets/button.dart';
 
 class PaymentMethods extends StatelessWidget {
   const PaymentMethods({super.key});
@@ -9,7 +8,7 @@ class PaymentMethods extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SafeArea(
-        minimum: EdgeInsets.all(authPadding),
+        minimum: const EdgeInsets.all(authPadding),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -177,7 +176,7 @@ class PaymentMethods extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.all(authPadding / 1.5),
           child: Container(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
                 vertical: authPadding, horizontal: authPadding / 2),
             decoration: BoxDecoration(border: Border.all(color: Colors.black)),
             child: Column(

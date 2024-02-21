@@ -47,11 +47,11 @@ class Filter extends StatelessWidget {
             const SizedBox(
               height: authPadding * 1.5,
             ),
-            Field(const Icon(Icons.location_on_outlined), "Select Area",
+            field(const Icon(Icons.location_on_outlined), "Select Area",
                 "Search Your Area"),
-            Field(const Icon(Icons.calendar_month_outlined), "Callendar",
+            field(const Icon(Icons.calendar_month_outlined), "Callendar",
                 "dd/mm/yy"),
-            // Field(const Icon(Icons.groups_2), "Capacity", "Search Your Area"),
+            // field(const Icon(Icons.groups_2), "Capacity", "Search Your Area"),
             const Padding(
               padding: EdgeInsets.symmetric(horizontal: authPadding),
               child: Row(
@@ -98,7 +98,7 @@ class Filter extends StatelessWidget {
                 ],
               ),
             ),
-            Field(const Icon(Icons.cookie_outlined), "Custom Capcity",
+            field(const Icon(Icons.cookie_outlined), "Custom Capcity",
                 "2500 - 3000",
                 count: 2),
 
@@ -147,7 +147,7 @@ class Filter extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(height: authPadding,),
+            const SizedBox(height: authPadding,),
             const Align(
               child: Button(text: "Save"),
             ),
@@ -158,7 +158,7 @@ class Filter extends StatelessWidget {
   }
 }
 
-Widget Field(Icon icon, String topic, String hint, {int count = 1}) {
+Widget field(Icon icon, String topic, String hint, {int count = 1}) {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: authPadding),
     child: Column(
